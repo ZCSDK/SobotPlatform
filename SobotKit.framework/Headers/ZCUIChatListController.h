@@ -1,0 +1,15 @@
+//
+//  ZCUIChatListController.h
+//  SobotKit
+//
+//  Created by zhangxy on 2017/9/5.
+//  Copyright © 2017年 zhichi. All rights reserved.
+//
+
+#import <SobotKit/SobotKit.h>
+
+@interface ZCUIChatListController : ZCUIBaseController
+
+@property(nonatomic,strong) ZCKitInfo *kitInfo;
+
+@end
