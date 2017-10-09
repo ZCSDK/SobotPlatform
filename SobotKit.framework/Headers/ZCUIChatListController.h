@@ -10,6 +10,7 @@
 
 @interface ZCUIChatListController : ZCUIBaseController
 
+@property(nonatomic,strong) NSString *userId;
 @property(nonatomic,strong) ZCKitInfo *kitInfo;
 
 @end
