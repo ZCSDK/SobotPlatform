@@ -28,10 +28,12 @@
  */
 -(NSMutableArray *) getPlatformList:(NSString *) userId;
 
+
 /**
  删除商家信息,本地永久删除
-
+ 
  @param appkey 商户APPKEY
+ @param userId 用户标识
  */
 -(void)deletePlatformByAppKey:(NSString *) appkey user:(NSString *) userId;
 
