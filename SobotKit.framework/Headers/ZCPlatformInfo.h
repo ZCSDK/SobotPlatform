@@ -13,6 +13,7 @@
 /** 平台APPKEY */
 extern NSString * const PLATFORMKEY_APPKEY;
 extern NSString * const PLATFORMKEY_NAME;
+extern NSString * const PLATFORMKEY_USERID;
 extern NSString * const PLATFORMKEY_AVATAR;
 extern NSString * const PLATFORMKEY_LASTMESSAGE;
 extern NSString * const PLATFORMKEY_WAITINGMSG;
@@ -29,6 +30,7 @@ extern NSString * const PLATFORMKEY_MESSAGEARR;
 
 @interface ZCPlatformInfo : NSObject
 
+@property (nonatomic,strong) NSString *userId;
 @property (nonatomic,strong) NSString *appkey;
 @property (nonatomic,strong) NSString *platformName;
 @property (nonatomic,strong) NSString *avatar;

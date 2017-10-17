@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ZCLibMessage.h"
 #import "ZCPlatformInfo.h"
+//
 #define LOCAL_AppkeyPrefix @"ZCPrefixLocal"
 #define LOCAL_AppkeyTEMPPrefix @"PFKEYTEMP_"
 
@@ -25,18 +26,20 @@
  本地获取，主线程执行即可
  @return 商户列表
  */
--(NSMutableArray *) getPlatformList;
+-(NSMutableArray *) getPlatformList:(NSString *) userId;
+
 
 /**
- 删除商家信息
-
+ 删除商家信息,本地永久删除
+ 
  @param appkey 商户APPKEY
+ @param userId 用户标识
  */
--(void)deletePlatformByAppKey:(NSString *) appkey;
--(void)cleanPlatformList;
+-(void)deletePlatformByAppKey:(NSString *) appkey user:(NSString *) userId;
 
 
--(ZCPlatformInfo *)getPlatformInfo:(NSString *) appkey;
+
+-(ZCPlatformInfo *)getPlatformInfo:(NSString *) appkey userId:(NSString *) userId;
 -(void)savePlatformInfo:(ZCPlatformInfo *)platformInfo;
 -(void)savePlatformInfo:(ZCPlatformInfo *)platformInfo cache:(BOOL) isCache;
 
@@ -52,14 +55,26 @@
  @param appkey 具体商户APPKEY
  @return 最新消息列表
  */
--(NSMutableArray *)getMessageForAppkey:(NSString *) appkey;
+-(NSMutableArray *)getMessageForAppkey:(NSString *) appkey userId:(NSString *)userId;
 
 
 
 
 
+
+/**
+ 退出登录时调用
+ */
 -(void)cleanCacheData;
--(void)cleanCacheDataByAppkey:(NSString *) appkey;
+
+
+/**
+ 初始化失败时清理
+
+ @param appkey
+ @param userId
+ */
+-(void)cleanCacheDataByAppkey:(NSString *) appkey userId:(NSString *) userId;
 +(void)cleanLocalParamterByPrefix:(NSString *) prefix;
 
 
