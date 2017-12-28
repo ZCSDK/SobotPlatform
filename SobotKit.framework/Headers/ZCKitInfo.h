@@ -29,6 +29,14 @@
 //                                                            //
 ////////////////////////////////////////////////////////////////
 
+
+/**
+ *  评价完人工是否关闭会话（人工满意度评价后释放会话）
+ *  默认为NO 未开启
+ *
+ */
+@property (nonatomic,assign) BOOL      isUseImagesxcassets;
+
 /**
  *  评价完人工是否关闭会话（人工满意度评价后释放会话）
  *  默认为NO 未开启
@@ -62,11 +70,31 @@
 @property (nonatomic,strong) NSString *unWordsCount;
 
 
+
+/**
+ *  是否开启智能转人工,(如输入“转人工”，直接转接人工)
+ * 需要隐藏转人工按钮，请参见isShowTansfer和unWordsCount属性
+ */
+@property (nonatomic,assign) BOOL  isOpenActiveUser;
+
+/**
+ 智能转人工关键字，关键字作为key{@"转人工",@"1",@"R":@"1"}
+ */
+@property (nonatomic,strong) NSDictionary *activeKeywords;
+
 /**
  *  是否开启语音功能
  *  默认开启
  */
 @property (nonatomic,assign) BOOL    isOpenRecord;
+
+
+/**
+ 是否开启机器人语音，（付费，否则语音无法识别）
+ 默认NO
+ */
+@property (nonatomic,assign) BOOL    isOpenRobotVoice;
+
 
 
 /**
@@ -422,6 +450,11 @@
  */
 @property (nonatomic ,assign) BOOL    isSetPhotoLibraryBgImage;
 
+
+/**
+ *  多轮会话模板四的超链颜色
+ */
+@property (nonatomic,strong) UIColor   *chatLeftMultColor;
 
 
 //@property (nonatomic,strong) id<ZCReceivedMessageDelegate> delegate;

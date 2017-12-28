@@ -77,7 +77,6 @@
 @property (nonatomic , strong) NSString *companyName;
 @property (nonatomic , strong) NSString *companyLogo;
 
-
 /**
  *  接入方式,1只有机器人,2.仅人工 3.智能客服-机器人优先 4智能客服-人工客服优先',
  */
@@ -299,12 +298,6 @@
  *  客服超时提示开关
  */
 @property (nonatomic,assign) BOOL   serviceOutTimeFlag;
-
-
-/**
- *  机器人模式是否开启语音
- */
-@property (nonatomic,assign) BOOL   isOpenRobotVoice;
 
 
 /**

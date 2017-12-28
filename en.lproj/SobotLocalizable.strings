@@ -45,11 +45,10 @@
 "评价" = "Feedback";
 
 "您好，客服" = "Hello, customer service";
-"消息中心" = "Message Center";
 
 //"昵称" = "NickName";
 
-"阅读全文>>" = "Read All>>";
+"查看详情>>" = "Read All>>";
 
 "已保存到系统相册" = "Saved to album";
 
@@ -182,7 +181,8 @@
 "链接" = "URL";
 
 "请输入邮箱地址" = "email@domain.com(required)";
-
+"请输入邮箱地址（必填）" = "email(required)";
+"请输入邮箱地址（选填）" = "email(optional)";
 
 "手机格式不正确" = "Mobile phone format is not correct";
 
@@ -197,9 +197,9 @@
 /************************图片************************/
 
 // 转人工的按钮图片
-"ZCicon_manualWork_nol" = "ZCIcon_manualWork_normal_en";
+"ZCIcon_manualWork_nol" = "ZCIcon_manualWork_normal_en";
 
-"ZCicon_manualWork_pre" = "ZCicon_manualWork_pressed_en";
+"ZCIcon_manualWork_pre" = "ZCIcon_manualWork_pressed_en";
 
 // 评价按钮的 解决和未解决
 "ZCIcon_NotSolved_nol" = "ZCIcon_NotSolved_nol_en";
@@ -250,3 +250,11 @@
 
 "排队已满" = "The queue is full";
 
+/*********  2.3.1 *************/
+"问题描述*" = "Problem description*";
+
+"问题类型" = "Problem Types";
+
+"请填写问题描述" = "Please fill in the description of the problem";
+
+"请选择问题类型" = "请选择问题类型";

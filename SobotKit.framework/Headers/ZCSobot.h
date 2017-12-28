@@ -37,7 +37,6 @@
       messageLinkClick:(void (^)(NSString *link)) messagelinkBlock;
 
 
-
 +(void)startZCChatListView:(ZCKitInfo *)info with:(UIViewController *)byController;
 
 /**
@@ -61,5 +60,5 @@
  */
 +(void) setShowDebug:(BOOL) isShowDebug;
 
-
++(NSString *)getsystorm;
 @end
