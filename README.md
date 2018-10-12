@@ -6,7 +6,7 @@
 
 =======
 
-1.智齿集成文档地址： https://shimo.im/doc/raVxsmOJZJwyBgCC   
+1.智齿集成文档(电商版)地址： https://shimo.im/doc/J7S7CRT2JEcu1som   
 
 2.智齿 iOS_SDK UI源码 Git下载地址：https://github.com/ZCSDK/sobotKit_UI_iOS  
 
