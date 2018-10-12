@@ -14,6 +14,10 @@
  */
 @interface ZCLibInitInfo : NSObject
 
+/**
+ *  接口域名,默认SaaS平台接口
+ */
+@property(nonatomic,strong) NSString *apiHost;
 
 
 /**
@@ -22,6 +26,14 @@
  *
  */
 @property (nonatomic,strong) NSString   *appKey;
+
+
+/**
+ *
+ *  customerCode   商户对接id （仅电商版适用，如果没有appkey，请提供此编码）
+ *
+ */
+@property (nonatomic,strong) NSString   *customerCode;
 
 
 /**
@@ -38,6 +50,18 @@
  *  0 可转入其他客服  1 必须转入指定客服（注意：如果当前指定的客服不在线，选择之后不能在转接到其他客服）
  */
 @property (nonatomic,assign) int  tranReceptionistFlag;
+
+
+
+/**
+ 跨公司转接人工(仅电商版本可用)
+ */
+// 1 是开启，默认0不开启
+@property (nonatomic,assign)  int   flowType;
+// 转接到的公司ID
+@property (nonatomic,strong)  NSString  * flowCompanyId;
+// 转接到的公司技能组
+@property (nonatomic,strong)  NSString  * flowGroupId;
 
 
 
@@ -245,20 +269,6 @@
 
 // *****   通告  ******  除了通告的图标地址，其他取接口
 
-/**
- *   是否显示通告栏
- */
-//@property (nonatomic,assign) BOOL     isShowNotifitionTopView;
-//
-///**
-// *  点击跳转后是否显示通告栏
-// */
-//@property (nonatomic,assign) BOOL     isDismissNotifitionTopView;
-//
-///**
-// *   通告标题
-// */
-//@property (nonatomic,strong) NSString   * notifitionTitle;
 
 /**
  *  通告的icon 的URL
@@ -279,6 +289,50 @@
  平台通道参数，初始化成功后会自动赋值
  */
 @property (nonatomic,strong) NSString   * platformUserId;
+
+/**
+ *
+ * 私钥
+ *
+ **/
+@property (nonatomic,copy) NSString * platformKey;
+
+/**
+ *
+ *   是否允许请求热点引导问题接口
+ */
+@property (nonatomic,assign) BOOL isEnableHotGuide;
+
+
+/**
+ *
+ *    热点引导问题的扩展字段
+ **/
+@property (nonatomic,strong) NSDictionary * hotguideDict;
+
+
+
+/**
+ *
+ *   机器人问答是否支持分词联想
+ */
+@property (nonatomic,assign) BOOL isEnableAutoTips;
+
+/**
+ *
+ *  自定发送商品订单信息类型
+ *  0 不发 1 给机器人发送 2 给人工发送  3 机器人和人工都发送
+ **/
+@property (nonatomic,assign) int goodMsgType;
+
+/**
+ *
+ *   自动发送商品订单信息内容
+ *   例如：“商品订单编号1403388282”
+ **/
+@property (nonatomic,copy) NSString * goodMsg;
+
+
 
 -(id)initByJsonDict:(NSDictionary *) dict;
 

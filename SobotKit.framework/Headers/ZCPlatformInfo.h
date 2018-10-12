@@ -30,13 +30,18 @@ extern NSString * const PLATFORMKEY_MESSAGEARR;
 
 @interface ZCPlatformInfo : NSObject
 
+@property (nonatomic,strong) NSString *listId;
+@property (nonatomic,strong) NSString *platformId;
 @property (nonatomic,strong) NSString *userId;
 @property (nonatomic,strong) NSString *appkey;
+@property (nonatomic,strong) NSString *companyId;
 @property (nonatomic,strong) NSString *platformName;
 @property (nonatomic,strong) NSString *avatar;
 @property (nonatomic,strong) NSString *lastDate;
 @property (nonatomic,strong) NSString *lastMsg;
 @property (nonatomic,assign) int       unRead;
+@property (nonatomic,strong) NSString *uid;
+@property (nonatomic,strong) NSString *lastCid;
 @property (nonatomic,strong) NSString *configJson;
 
 
@@ -45,6 +50,8 @@ extern NSString * const PLATFORMKEY_MESSAGEARR;
 @property (nonatomic,assign) BOOL isSendToUser;
 @property (nonatomic,assign) BOOL isPjRobot;
 @property (nonatomic,assign) BOOL isPjUser;
+@property (nonatomic,strong) NSString *groupId;
+@property (nonatomic,strong) NSString *groupName;
 @property (nonatomic,strong) NSString     *checkInitKey;
 @property (nonatomic,strong) ZCLibConfig  *config;
 @property (nonatomic,strong) ZCLibMessage *waitintMessage;

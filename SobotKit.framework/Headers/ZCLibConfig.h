@@ -299,6 +299,80 @@
  */
 @property (nonatomic,assign) BOOL   serviceOutTimeFlag;
 
+/**
+ *   切换机器人开关 1-开启，0-关闭
+ */
+@property (nonatomic,assign) int  robotSwitchFlag;
+
+/**
+ *
+ *  是否开启快捷入口
+ *
+ **/
+@property (nonatomic,assign) int quickEntryFlag;
+
+
+/**
+ *
+ *  -1待激活，0免费版，1试用版，2专业版，3企业版  4旗舰版
+ *
+ **/
+@property (nonatomic,assign) int accountStatus;
+
+/**
+ *
+ * 智能路由开关   0 没有  1 有
+ *
+ **/
+@property (nonatomic,assign) BOOL smartRouteInfoFlag;
+
+
+
+/**
+ *
+ *  机器人欢迎语开关：robotHelloWordFlag
+ *
+ **/
+@property (nonatomic,assign) BOOL robotHelloWordFlag;
+
+
+/**
+ *
+ *  客服欢迎语开关：adminHelloWordFlag
+ *
+ **/
+@property (nonatomic,assign) BOOL adminHelloWordFlag;
+
+
+/**
+ *
+ *  客服移除用户推送文案开关：serviceEndPushFlag
+ *
+ **/
+@property (nonatomic,assign) BOOL serviceEndPushFlag;
+
+/**
+ *
+ *  说辞会在用户转人工时返回，serviceEndPushMsg
+ *
+ **/
+@property (nonatomic,copy) NSString* serviceEndPushMsg;
+
+/**
+ *   转人工提示暂无客服在线 说辞 的开关  1 显示 0 不显示
+ *   adminNoneLineFlag
+ *
+ **/
+@property (nonatomic,assign) BOOL adminNoneLineFlag;
+
+
+/**
+ *
+ *  转人工排队说辞的 开关  1 显示 0 不显示
+ * queueFlag
+ **/
+@property (nonatomic,assign) BOOL queueFlag;
+
 
 /**
  *  对象封装

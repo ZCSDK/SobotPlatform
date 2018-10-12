@@ -15,13 +15,26 @@
  */
 @interface ZCKitInfo : NSObject
 
-
+/**
+ *
+ *  SDK 页面中使用自定义的导航栏不在使用 系统的导航栏（影藏）
+ *  默认 为NO 跟随集成项目
+ **/
+@property (nonatomic,assign) BOOL navcBarHidden;
 
 /**
- *  接口域名
+ *  接口域名,从2.6.5版本开始，本属性不起作用，请使用ZCLibInitInfo.apiHost
+ *  @deprecated 2018-09-05: Use ZCLibInitInfo.h  instead
  */
 @property(nonatomic,strong) NSString *apiHost;
 
+
+/**
+ *
+ *   导航栏右上角 是否显示 评价按钮  默认不显示
+ *
+ **/
+@property (nonatomic,assign) BOOL isShowEvaluation;
 
 
 ////////////////////////////////////////////////////////////////
@@ -81,6 +94,28 @@
  智能转人工关键字，关键字作为key{@"转人工",@"1",@"R":@"1"}
  */
 @property (nonatomic,strong) NSDictionary *activeKeywords;
+
+
+/**
+ *  自定义快捷入口
+ *  填充内容为： ZCLibCusMenu.h
+ *  url: 快捷入口链接(点击后会调用初始化linkBock)
+ *  title: 按钮标题
+ *  lableId: 自定义快捷入口的ID
+ *
+ **/
+@property (nonatomic,strong) NSMutableArray * cusMenuArray;
+
+
+
+/**
+ * 自定义输入框下方更多(+号图标)按钮下面内容(不会替换原有内容，会在原有基础上追加)
+ * 填充内容为：ZCLibCusMenu.h
+ *  title:按钮名称
+ *  url：点击链接(点击后会调用初始化linkBock)
+ *  imgName:本地图片名称，如xxx@2x.png,icon=xxx
+ */
+@property (nonatomic,strong) NSMutableArray * cusMoreArray;
 
 /**
  *  是否开启语音功能
@@ -186,18 +221,20 @@
 
 /**
  *
- * 网络状态中的背景色（连接中）
+ * 网络状态中的背景色（连接中） （已弃用）
+ *  @deprecated 2018-07-31: Use customBannerColor  instead
  *
  */
-@property (nonatomic,strong) UIColor    *socketStatusButtonBgColor;
+//@property (nonatomic,strong) UIColor    *socketStatusButtonBgColor;
 
 
 /**
  *
- * 网络状态中的背景色（连接中）
+ * 网络状态中的背景色（连接中） （已弃用）
+ *  @deprecated 2018-07-31: Use customBannerColor  instead
  *
  */
-@property (nonatomic,strong) UIColor    *socketStatusButtonTitleColor;
+//@property (nonatomic,strong) UIColor    *socketStatusButtonTitleColor;
 
 
 /**
@@ -220,10 +257,15 @@
 
 /**
  *  自定义风格颜色：导航
- *
  */
 @property (nonatomic,strong) UIColor    *customBannerColor;
 
+
+/**
+ *  机器人的问答中 提示转人工按钮的文字颜色
+ *
+ */
+@property (nonatomic,strong) UIColor    *trunServerBtnColor;
 
 /**
  *  相册导航栏的颜色
@@ -457,7 +499,102 @@
 @property (nonatomic,strong) UIColor   *chatLeftMultColor;
 
 
-//@property (nonatomic,strong) id<ZCReceivedMessageDelegate> delegate;
-//@property (nonatomic,strong) ReceivedMessageBlock          receivedBlock;
+/**
+ *  多轮会话中 展开和收起的文字颜色
+ */
+@property (nonatomic,strong) UIColor * openMoreBtnTextColor;
+
+/**
+ *
+ *  更多按钮默认图片
+ *
+ **/
+@property (nonatomic,copy) NSString * moreBtnNolImg;
+
+/**
+ *
+ *  更多按钮选中图片
+ *
+ **/
+@property (nonatomic,copy) NSString * moreBtnSelImg;
+
+/**
+ *
+ *  转人工按钮默认图片
+ *
+ **/
+@property (nonatomic,copy) NSString * turnBtnNolImg;
+
+/**
+ *
+ *  转人工按选中图片
+ *
+ **/
+@property (nonatomic,copy) NSString * turnBtnSelImg;
+
+/**
+ *
+ *  返回按钮默认图片
+ *
+ **/
+@property (nonatomic,copy) NSString * topBackNolImg;
+
+/**
+ *
+ *  返回按钮选中图片
+ *
+ **/
+@property (nonatomic,copy) NSString * topBackSelImg;
+
+/**
+ *
+ *  返回按钮的默认背景色
+ *
+ **/
+@property (nonatomic,strong) UIColor * topBackNolColor;
+
+/**
+ *
+ *  返回按钮的高亮背景色
+ *
+ **/
+@property (nonatomic,strong) UIColor * topBackSelColor;
+
+/**
+ *
+ *  导航栏背景色 （单独修改）
+ *
+ **/
+@property (nonatomic,strong) UIColor * topViewBgColor;
+
+
+
+/**
+ *
+ *  顶踩 文字 默认颜色
+ *
+ **/
+@property (nonatomic,strong) UIColor * topBtnNolColor;
+
+/**
+ *
+ *  顶踩 文字 选中颜色
+ *
+ **/
+@property (nonatomic,strong) UIColor * topBtnSelColor;
+
+/**
+ *
+ *  顶踩 文字 置灰颜色
+ *
+ **/
+@property (nonatomic,strong) UIColor * topBtnGreyColor;
+
+/**
+ *
+ *   聊天页面 左上角 返回按钮的文字 （默认 返回）
+ *
+ **/
+@property (nonatomic,copy) NSString * topBackTitle;
 
 @end

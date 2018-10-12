@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 
 
+
 /**ZCPageBlockType回调类型*/
 typedef NS_ENUM(NSInteger,ZCPageBlockType) {
     ZCPageBlockGoBack     = 1,// 点击返回
     ZCPageBlockLoadFinish = 2,// 加载界面完成，可对UI进行修改
+    ZCPageBlockLeave      = 3,// 留言
 };
 
 typedef NS_ENUM(NSInteger, ButtonClickTag) {
@@ -20,6 +22,8 @@ typedef NS_ENUM(NSInteger, ButtonClickTag) {
     BUTTON_CLOSE  = 2, // 关闭(未使用)
     BUTTON_UNREAD = 3, // 未读消息
     BUTTON_MORE   = 4, // 清空历史记录
+    BUTTON_TURNROBOT = 5,// 切换机器人
+    BUTTON_EVALUATION =6,// 评价
 };
 
 /**
