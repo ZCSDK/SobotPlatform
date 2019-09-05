@@ -11,14 +11,21 @@
 2.智齿 iOS_SDK UI源码 Git下载地址：https://github.com/ZCSDK/sobotKit_UI_iOS  
 
 3.智齿 iOS_SDK 常见问题解答 下载地址：https://github.com/ZCSDK/FAQ_iOS        
- 
+
 =======
 
+### SDK 2.7.9 版本更新说明
 
-###SDK 2.6.6 版本更新说明
+1 [增加] 工单回复富文本优化
+
+2 [增加] 图片增加二维码识别
+
+3 [增加] 会话锁定功能
+
+### SDK 2.6.6 版本更新说明
 
 1 [新增]iOS12适配
-  
+
 2 [新增]增加商户对接id(仅电商版使用)
 
 3 初始化方法中 pageBlock 中原 ZCChatController *object 替换为 id object 

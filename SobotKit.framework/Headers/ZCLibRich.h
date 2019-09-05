@@ -8,6 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import "ZCMultiwheelModel.h"
+typedef NS_ENUM(NSInteger,ZCMsgType) {
+    // 0文本 1图片 2音频 4 富文本中有图片 5 富文本中纯文字 6 富文本中有视频 15，多轮会话  7.热点引导, 12文件
+    ZCMsgTypeText = 0,
+    ZCMsgTypePhoto = 1,
+    ZCMsgTypeVoice = 2,
+    ZCMsgTypeRich = 4,
+    ZCMsgTypeRichText = 5,
+    ZCMsgTypeRichVideo = 6,
+    ZCMsgTypeHotGuide = 7,
+    ZCMsgTypeFile = 12,
+    ZCMsgTypeVideo = 23,
+    ZCMsgTypeLocation = 22,
+    ZCMsgTypeLoopChat = 15,
+    ZCMsgTypeCard = 101,
+};
 
 /**
  *  配置富媒体
@@ -40,9 +55,34 @@
 @property (nonatomic,strong  ) NSString         * duration;
 
 /**
- *  0文本 1图片 2音频 4 富文本中有图片 5 富文本中纯文字 6 富文本中有视频 15，多轮会话  7.热点引导
+ *  0文本 1图片 2音频 4 富文本中有图片 5 富文本中纯文字 6 富文本中有视频 15，多轮会话  7.热点引导, 8文件 ,24 商品卡片
  */
-@property (nonatomic,assign  ) int              msgType;
+@property (nonatomic,assign  ) ZCMsgType              msgType;
+
+/**
+ * 13 doc文件格式
+ * 14 ppt文件格式
+ * 15 xls文件格式
+ * 16 pdf文件格式
+ * 17 mp3文件格式
+ * 18 mp4文件格式
+ * 19 压缩文件格式
+ * 20 txt文件格式
+ * 21 其他文件格式
+ */
+@property (nonatomic,assign  ) int              fileType;
+@property (nonatomic,strong  ) NSString         *fileSize;
+
+
+//位置
+// 经度
+@property (nonatomic,strong  ) NSString         *longitude;
+// 维度
+@property (nonatomic,strong  ) NSString         *latitude;
+// 地址
+@property (nonatomic,strong  ) NSString         *localName;
+@property (nonatomic,strong  ) NSString         *localLabel;
+
 
 /**
  *  回答建议
@@ -80,6 +120,16 @@
 @property (nonatomic,copy) NSString * answerStrip;// 引导语，多轮会话中 15239 1523 1524 时 megtype ==11 时 添加
 
 
+// 是否开启换一批功能
+@property (nonatomic,assign  ) int              guideGroupFlag;
+
+// 没页显示的数量
+@property (nonatomic,assign  ) int              guideGroupNum;
+
+// 当前显示页数，从0开始
+@property (nonatomic,assign  ) int              guideGroupPage;
+
+
 /**
  *  建议引导
  */
@@ -107,6 +157,9 @@
 
 /** 当前数据是 热点引导*/
 @property (nonatomic,assign) BOOL isHotGuide;
+
+
+
 
 /**
  *  初始化

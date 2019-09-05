@@ -27,20 +27,27 @@
 // 跳转留言
 -(void)onLeaveMsgClick:(NSString*)tipMsg;
 
+- (void)onPageStatusChange:(BOOL)isArtificial;
+
 @end
 
 
 
 @interface ZCChatView : UIView
 
+typedef NS_ENUM(NSInteger,ZCChatViewGoBackType) {
+    ZCChatViewGoBackType_normal    = 1, // 返回按钮
+    ZCChatViewGoBackType_close    = 2,  // 关闭按钮
+    
+};
 /** 未知说辞计数*/
 @property (nonatomic, assign) NSUInteger       unknownWordsCount;
 
 // 初始化
--(instancetype)initWithFrame:(CGRect)frame WithSuperController:(UIViewController *)superController;
+-(instancetype)initWithFrame:(CGRect)frame WithSuperController:(UIViewController *)superController customNav:(BOOL)isCreated;
 
 // 设置页面代理
-@property (nonatomic,assign) id<ZCChatViewDelegate>delegate;
+@property (nonatomic,weak) id<ZCChatViewDelegate>delegate;
 
 // 是否显示顶部导航
 @property (nonatomic,assign) BOOL hideTopViewNav;
@@ -59,6 +66,11 @@
  *  关闭按钮（返回）
  */
 @property(nonatomic,strong) UIButton    * backButton;
+
+/**
+ *  关闭按钮（关闭，弹评价，但是会直接关闭）
+ */
+@property(nonatomic,strong) UIButton    * closeButton;
 
 /**
  清空聊天记录
@@ -83,7 +95,8 @@
  **/
 @property(nonatomic,assign) BOOL  isJumpCustomLeaveVC;
 
-
+// 系统导航栏是否设置透明度
+@property (nonatomic,assign) BOOL  nacTranslucent;
 
 // 显示聊天窗口
 -(void)showZCChatView:(ZCKitInfo *)kitInfo;
@@ -101,7 +114,16 @@
 /**
  *  返回事件
  **/
--(void)confimGoBack;
+//-(void)confimGoBack;
+
+
+/**
+ 返回后关闭通道，离线用户
+ */
+//-(void)confimGoBackCloseChat;
+
+- (void)confimGoBackWithType:(ZCChatViewGoBackType )type;
+
 
 /**
  *

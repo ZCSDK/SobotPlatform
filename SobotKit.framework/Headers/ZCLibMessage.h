@@ -59,6 +59,22 @@ typedef NS_ENUM(NSInteger,ZCTipCellMessageType) {
     
     /** 安全提示 */
     ZCTipCellMessageSafety                           = 21,
+    
+    /*** 您的留言状态有更新  ***/
+    ZCTipCellMessageUpdateLeave                      = 22,
+    
+    /***** 情绪转人工和重复提问转人工 提示文案   ****/
+    ZCTipCellMessageRobotTurnMsg                     = 23,
+    
+    /****** 留言转离线消息 ******/
+    ZCTIPCellMessageOrderLeave                        = 24,
+    
+    /****** 您的留言已提交成功 *****/
+    ZCTipCellMessageLeaveSuccess                      = 25,
+    
+
+    
+    
 };
 
 
@@ -275,6 +291,48 @@ typedef NS_ENUM(NSInteger,ZCTipCellMessageType) {
 
 
 /**
+ *
+ *   revokeFlag  0    1 撤回 “显示 客服xxx 撤回了一条消息”
+ *
+ **/
+@property (nonatomic,assign) BOOL revokeFlag;
+
+
+/**
+ *
+ *  transferType  转人工类型，0-不转，1-重复提问转人工，2-情绪负向转人工
+ *
+ **/
+@property (nonatomic,assign)  int transferType;
+
+/**
+ *
+ *  queueFlag  排队方式标记  只在关键字转人工的时候传给服务端，其他情况传空
+ *
+ **/
+@property (nonatomic,assign)  int queueFlag;
+
+
+/**
+ *
+ *  记录通告是否展开
+ *
+ **/
+@property (nonatomic,assign) BOOL isOpenNotice;
+
+
+/**
+ *
+ *  消息体中包含leaveMsgFlag=1，表示该消息为离线留言消息，需要在左侧有小图标
+ *
+ **/
+@property (nonatomic,assign) int leaveMsgFlag;
+
+
+@property (nonatomic,strong) NSMutableDictionary * miniPageDic;// 卡片消息的数据（仅历史记录数据中获取）
+
+
+/**
  *  初始化
  *
  *  @param dict 数据解析后的数据字典类型
@@ -288,6 +346,15 @@ typedef NS_ENUM(NSInteger,ZCTipCellMessageType) {
 -(NSString *)getTipMsg:(int)action content:(NSString*)message isOpenLeave:(NSUInteger) isOpen;
 
 -(instancetype)initWithModel:(ZCLibMessage *)model isShowGroup:(BOOL)isShow;
+
+
+
+/**
+ 获取显示的组合内容
+
+ @return
+ */
+-(NSString *) getModelDisplayText;
 
 
 @end

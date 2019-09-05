@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "ZCLibInitInfo.h"
-
+//#import "ZCKitInfo.h"
+#import "ZCLibMessage.h"
 
 ////////////////////////////////////////////////////////////////
 // 自定义回调）
 ////////////////////////////////////////////////////////////////
+
 
 
 /**
@@ -36,7 +38,7 @@
 typedef void(^ReceivedMessageBlock)(id message,int nleft,NSDictionary *object);
 
 
-
+typedef void(^TurnServiceBlock)(id obj,NSString *msg,NSInteger turnType, NSString*keyword ,NSString*keywordId);
 
 
 
@@ -103,18 +105,34 @@ typedef void(^ReceivedMessageBlock)(id message,int nleft,NSDictionary *object);
 // block方式配置
 @property (nonatomic,strong) ReceivedMessageBlock          receivedBlock;
 
+/**
+ *
+ *
+ * 自定义转人工回调事件
+ * 拦截SDK 转人工事件 用于跳转到自己的app页面动态处理转人工 配置技能组id 商品信息等参数
+ *
+ *
+ ***/
+@property (nonatomic,strong)  TurnServiceBlock    turnServiceBlock;
 
 +(ZCLibClient *) getZCLibClient;
 
 
 
 /**
- 初始化智齿客服
+ 初始化智齿客服 2.7.2开始使用
  
  @param appkey 智齿appkey(如果是电商版本，请填写自己公司的APPKEY)
+ @param resultBlock 初始化结果回调
  */
--(void)initSobotSDK:(NSString *) appkey;
+-(void)initSobotSDK:(NSString *) appkey result:(void (^)(id object))resultBlock;
 
+/**
+ *
+ *  初始化智齿客服 (2.7.1之前使用)
+ *
+ **/
+-(void)initSobotSDK:(NSString *) appkey;
 
 /**
  检查初始化状态，（成功/失败）
@@ -142,6 +160,15 @@ typedef void(^ReceivedMessageBlock)(id message,int nleft,NSDictionary *object);
  @return 未读消息数(进入智齿聊天页面会清空)
  */
 -(int) getUnReadMessage;
+
+
+
+/**
+ 清空用户下的所有未读消息(本地清空)
+
+ @param userId 接入的用户ID
+ */
+-(void) clearUnReadNumber:(NSString *) userId;
 
 
 /**
@@ -190,6 +217,18 @@ typedef void(^ReceivedMessageBlock)(id message,int nleft,NSDictionary *object);
  检查当前监听是否被移除，如果移除就重新注册
  */
 -(void)checkIMObserverWithRegister;
+
+
+/**
+ *  读取日志文件内容 保存最近的7天 v2.7.9
+ *
+ *  @param dateString 具体哪一天的日志，格式yyyyMMdd
+ *
+ *  @return 文件内容
+ */
++(NSString *) readLogFileDateString:(NSString *) dateString;
+
+
 
 
 @end

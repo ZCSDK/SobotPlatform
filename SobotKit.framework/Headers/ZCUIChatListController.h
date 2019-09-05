@@ -18,4 +18,8 @@
 
 @property(nonatomic,strong) void (^OnItemClickBlock)(ZCUIChatListController *vc,ZCPlatformInfo *object);
 
+@property (nonatomic,strong) UIViewController * byController; // 记录启动页面的导航状态
+
+
+
 @end

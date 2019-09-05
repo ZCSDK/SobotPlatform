@@ -16,6 +16,19 @@
 @interface ZCKitInfo : NSObject
 
 /**
+ *  push后隐藏 BottomBar
+ *  默认为 YES
+ */
+@property (nonatomic,assign) BOOL ishidesBottomBarWhenPushed;
+
+
+/**
+ *  仅支持竖屏
+ *  默认为 NO
+ */
+@property (nonatomic,assign) BOOL isShowPortrait;
+
+/**
  *
  *  SDK 页面中使用自定义的导航栏不在使用 系统的导航栏（影藏）
  *  默认 为NO 跟随集成项目
@@ -28,6 +41,19 @@
  */
 @property(nonatomic,strong) NSString *apiHost;
 
+/**
+ *
+ *   人工状态，是否可以发送位置
+ 【 注意：
+ 由于各家定位插件特别多，智齿没有实现选择位置功能，所以需要自行传递位置到SDK以及打开显示，步骤如下：
+ 1、实现messageLinkClick事件（ZCSobot startZCChatVC函数中）
+ 2、当收到link = sobot://sendlocation 调用智齿接口发送位置信息
+ 3、当收到link = sobot://openlocation?latitude=xx&longitude=xxx&address=xxx 可根据自己情况处理相关业务
+】
+ *
+ **/
+@property (nonatomic,assign) BOOL canSendLocation;
+
 
 /**
  *
@@ -35,6 +61,35 @@
  *
  **/
 @property (nonatomic,assign) BOOL isShowEvaluation;
+
+/**
+ *
+ *   针对关闭按钮，单独设置是否显示评价界面，默认不显示
+ *
+ **/
+@property (nonatomic,assign) BOOL isShowCloseSatisfaction;
+
+/**
+ *
+ *   导航栏右上角 是否显示 拨号按钮 默认不显示    注意：和isShowEvaluation 互斥 只能设置一个有效
+ *
+ **/
+@property (nonatomic,assign) BOOL isShowTelIcon;
+
+
+/**
+ *
+ *   导航栏左上角 是否显示 关闭按钮 默认不显示，关闭按钮，点击后无法监听后台消息
+ *
+ **/
+@property (nonatomic,assign) BOOL isShowClose;
+
+/**
+ *  设置电话号码
+ *  当导航栏右上角 显示 拨号按钮时  （和isShowTelIcon 一起设置有效）
+ *
+ **/
+@property (nonatomic,copy) NSString * customTel;
 
 
 ////////////////////////////////////////////////////////////////
@@ -44,7 +99,7 @@
 
 
 /**
- *  评价完人工是否关闭会话（人工满意度评价后释放会话）
+ *  是否使用Images
  *  默认为NO 未开启
  *
  */
@@ -110,12 +165,23 @@
 
 /**
  * 自定义输入框下方更多(+号图标)按钮下面内容(不会替换原有内容，会在原有基础上追加)
+ * 修改人工模式的按钮
  * 填充内容为：ZCLibCusMenu.h
  *  title:按钮名称
  *  url：点击链接(点击后会调用初始化linkBock)
  *  imgName:本地图片名称，如xxx@2x.png,icon=xxx
  */
 @property (nonatomic,strong) NSMutableArray * cusMoreArray;
+
+/**
+ * 自定义输入框下方更多(+号图标)按钮下面内容(不会替换原有内容，会在原有基础上追加)
+ * 修改机器人模式的按钮
+ * 填充内容为：ZCLibCusMenu.h
+ *  title:按钮名称
+ *  url：点击链接(点击后会调用初始化linkBock)
+ *  imgName:本地图片名称，如xxx@2x.png,icon=xxx
+ */
+@property (nonatomic,strong) NSMutableArray * cusRobotMoreArray;
 
 /**
  *  是否开启语音功能
@@ -390,6 +456,12 @@
  */
 @property (nonatomic,strong) UIColor    *topViewTextColor;
 
+
+/**
+ 顶部左右按钮颜色
+ */
+@property (nonatomic,strong) UIColor    *topSubheadTextColor;
+
 /**
  *  左边气泡文字颜色
  */
@@ -596,5 +668,72 @@
  *
  **/
 @property (nonatomic,copy) NSString * topBackTitle;
+
+
+
+
+/****************   2.7.4  新增  ****************/
+
+/**
+ *
+ *  留言页面中 提交按钮的文字颜色
+ *
+ **/
+@property (nonatomic,strong) UIColor * leaveSubmitBtnTextColor;
+
+
+
+/**
+ *
+ *  留言页面中 提交按钮的背景颜色
+ *
+ **/
+@property (nonatomic,strong) UIColor * leaveSubmitBtnImgColor;
+
+//**********************     帮助中心       ***************/
+/**
+ *
+ * 帮助中心 标题的文字颜色
+ *
+ **/
+@property (nonatomic,strong) UIColor * scTopTextColor;
+
+/**
+ *
+ *  帮助中心 标题font
+ *
+ **/
+@property (nonatomic,strong) UIFont * scTopTextFont;
+
+
+/**
+ *
+ *  帮助中心 导航条背景色
+ *
+ **/
+@property (nonatomic,strong) UIColor * scTopBgColor;
+
+/**
+ *
+ * 帮助中心 顶部返回的文字颜色
+ *
+ **/
+@property (nonatomic,strong) UIColor * scTopBackTextColor;
+
+/**
+ *
+ *  帮助中心 顶部返回按钮的文字字号
+ *
+ **/
+@property (nonatomic,strong) UIFont * scTopBackTextFont;
+
+//**********************     帮助中心    end   ***************/
+
+/**
+ *
+ *   商品卡片信息是否自动发送（转人工成功时，自动发送商品卡片信息）
+ *   默认不发送
+ **/
+@property (nonatomic,assign) BOOL isSendInfoCard;
 
 @end

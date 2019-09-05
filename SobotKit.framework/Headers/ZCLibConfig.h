@@ -51,6 +51,9 @@
  */
 @property (nonatomic , strong) NSString *adminHelloWord;
 
+//客服欢迎语规则，1-只显示一次，0-默认值
+@property (nonatomic , assign) int      adminHelloWordCountRule;
+
 /**
  *  用户无应答提示时间
  */
@@ -70,6 +73,9 @@
  *  客服无应答提示文案
  */
 @property (nonatomic , strong) NSString *adminTipWord;
+
+// 客服超时推送规则，1-只显示一次，0-默认值
+@property (nonatomic , assign) int      serviceOutCountRule;
 
 /**
  *  企业名称
@@ -272,6 +278,28 @@
  */
 @property (nonatomic,assign) int  announceMsgFlag;
 
+/**
+ *
+ *  msgToTicketFlag-留言按钮模式：1-转工单，2-转离线消息
+ *
+ **/
+@property (nonatomic,assign) int msgToTicketFlag;
+
+/**
+ *
+ *  msgLeaveTxt-转离线消息时，顶部引导文案
+ *
+ **/
+@property (nonatomic,copy) NSString * msgLeaveTxt;
+
+/**
+ *
+ *   msgLeaveContentTxt-转离线消息时，内容引导文案
+ *
+ **/
+@property (nonatomic,copy) NSString * msgLeaveContentTxt;
+
+
 
 /**
  *  通告的标题
@@ -373,6 +401,8 @@
  **/
 @property (nonatomic,assign) BOOL queueFlag;
 
+// 获取用户留言记录列表接口 使用入参
+@property (nonatomic,copy) NSString * customerId;
 
 /**
  *  对象封装

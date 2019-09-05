@@ -15,7 +15,10 @@
 @interface ZCLibInitInfo : NSObject
 
 /**
- *  接口域名,默认SaaS平台接口
+ *  接口域名,
+ * 默认SaaS平台域名为:https://api.sobot.com
+ * 如果您是腾讯云服务，请设置为：https://ten.sobot.com
+ * 如果您是本地化部署，请使用你们自己的部署的服务域名
  */
 @property(nonatomic,strong) NSString *apiHost;
 
@@ -66,9 +69,9 @@
 
 
 /**
- *  用户唯一标识（对接用户可靠身份，不建议为null）
+ *  用户唯一标识（对接用户可靠身份，不能写死，不建议为null，如果为空会以设备区别）
  *  null
- *  将自动备注到客户资料
+ *  将自动备注到客户资料，
  */
 @property (nonatomic,strong) NSString   *userId;
 
@@ -119,12 +122,42 @@
 @property (nonatomic,strong) NSDictionary *customInfo;
 
 
+
+/**
+ *  转人工 指定技能组 溢出
+ * [{"actionType":"to_group","optionId":"3","deciId":"162bb6bb038d4a9ea018241a30694064","spillId":"7"},
+ {"actionType":"to_group","optionId":"4","deciId":"a457f4dfe92842f8a11d1616c1c58dc1"}]
+ 
+ actionType:执行动作类型：to_group:转接指定技能组
+ optionId:是否溢出  指定技能组时：3：溢出，4：不溢出。
+ deciId:指定的技能组。
+ spillId:溢出条件  指定客服组时：4:技能组无客服在线,5:技能组所有客服忙碌,6:技能组不上班,7:智能判断
+ *
+ */
+@property (nonatomic,strong) NSArray *customGroupType;
+
+
+/**
+ *  转人工自定义字段
+ *
+ *
+ **/
+@property (nonatomic,strong) NSDictionary * summaryParams;
+
 /**
  * 固定KEY的自定义字段
  * null
  * 所有的KEY均在工作台设置后生效（设置->自定义字段->用户信息字段）
  */
 @property (nonatomic,strong) NSDictionary *customerFields;
+
+
+/**
+ *
+ *  多轮会话 自定义字段
+ *  默认 null
+ **/
+@property (nonatomic,strong) NSDictionary *multiParams ;
 
 
 /**
@@ -333,6 +366,13 @@
 @property (nonatomic,copy) NSString * goodMsg;
 
 
+/**
+ *
+ *  指定客户优先
+ *  同PC端 设置-在线客服分配-排队优先设置-指定客户优先   开启传1 默认不设置
+ *  开启后 指定客户发起咨询时，如果出现排队，系统将优先接入。
+ **/
+@property (nonatomic,assign) int queueFirst;
 
 -(id)initByJsonDict:(NSDictionary *) dict;
 
