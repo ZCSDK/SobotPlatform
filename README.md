@@ -6,13 +6,21 @@
 
 =======
 
-1.智齿集成文档(电商版)地址： https://shimo.im/doc/J7S7CRT2JEcu1som   
+1.智齿集成文档(电商版)地址： https://shimo.im/docs/HyQ9crCXWqQxtXKg   
 
 2.智齿 iOS_SDK UI源码 Git下载地址：https://github.com/ZCSDK/sobotKit_UI_iOS  
 
 3.智齿 iOS_SDK 常见问题解答 下载地址：https://github.com/ZCSDK/FAQ_iOS        
 
 =======
+
+
+### SDK 2.8.0 版本更新说明
+1、新增商品订单消息类型  
+2、新增商品信息消息模板  
+3、统一接入参数  
+4、统一UI风格，去掉聊天中的名称和头像显示  
+
 
 ### SDK 2.7.12 版本更新说明
 1、【优化】转人工过程不支持发送消息，解决人工聊天时偶发出现机器人消息问题    
