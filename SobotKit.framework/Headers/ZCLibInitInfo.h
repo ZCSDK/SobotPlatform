@@ -71,7 +71,7 @@
 /**
  跨公司转接人工(仅电商版本可用)
  */
-// 1 是开启，默认0不开启
+// 默认0不开启 1-全部溢出，2-忙碌时溢出，3-不在线时溢出
 @property (nonatomic,assign)  int   flowType;
 // 启用新的接口命名方式，兼容驼峰命名
 @property(nonatomic,assign) int flow_type;
@@ -314,7 +314,7 @@
 
 /**
  *
- *  聊天页顶部标题 的自定义方式 0.默认  1.企业名称  2.自定义字段
+ *  聊天页顶部标题 的自定义方式 0.默认  1.企业名称  2.自定义字段，3.仅显示文字、4显示头像和文字
  *
  */
 @property (nonatomic,strong) NSString  *titleType;
