@@ -174,7 +174,7 @@ typedef void(^initResultBlock)(ZCInitStatus code,NSMutableArray *arr,NSString *r
 
 @property(nonatomic,copy) initResultBlock ResultBlock;
 
-@property(nonatomic,copy) BOOL (^LinkClickBlock)(NSString *linkUrl);
+@property(nonatomic,copy) BOOL (^LinkClickBlock)(NSString *linkUrl); // 1129
 @property(nonatomic,copy) void (^PageLoadBlock)(id object,ZCPageBlockType type);
 
 

@@ -41,7 +41,7 @@
 
 "呼叫" = "Call";
 
-"感谢您的反馈^-^!" = "Thank you";
+//"感谢您的反馈^-^!" = "Thank you";
 
 "您已完成评价" = "We've received your feedback";
 
@@ -61,6 +61,12 @@
 
 "换一组" = "New data";
 
+"转人工" = "Manual";
+
+"有用" = "yes";
+
+"没用" = "no";
+
 "已保存到系统相册" = "Saved to album";
 
 "保存图片" = "Save the picture";
@@ -75,7 +81,7 @@
 
 "邮箱" = "Email";
 
-"文本超过最大限制，不能超过200个字符" = "Text exceed the maximum limit, cannot exceed 200 characters";
+//"文本超过最大限制，不能超过200个字符" = "Text exceed the maximum limit, cannot exceed 200 characters";
 
 "留言成功，我们将尽快联系您" = "The email has been sent successfully, The team will contact you soon";
 
@@ -387,3 +393,52 @@
 
 "提交并咨询"="Submit and consult";
 "感谢您的评价！" = "Thank you for your evaluation!";
+
+// 1128
+"售价" = "Price";
+"件" = "Pieces";
+"商品" = "commodity" ;
+"合计" = "total";
+"订单" = "Order";
+"状态" = "status";
+"编号" = "number";
+"下单" = "order";
+
+"图片" = "image";
+"语音" = "voice";
+"文件" = "file";
+"新消息" = "New news";
+"位置" = "position";
+
+"请输入您的邮箱" = "Please enter your email";
+"请您输入手机号" = "Please enter your mobile number";
+"上传中" = "uploading";
+"必填" = "Required";
+
+"加载历史消息完成" = "Load history message completed";
+"直接关闭技能组" = "Close skill group directly";
+"开始转人工" = "Start turning to labor";
+"转人工完成" = "Manually completed";
+"客服" = "Customer service";
+"验证码" = "Verification code";
+
+"详细信息" = "details";
+"网络错误" = "Network Error";
+"网络连接超时" = "Network connection timed out";
+
+"中国移动" = "China Mobile";
+"中国联通" = "China Unicom";
+"中国电信" = "China Telecom";
+"铁通" = "Tietong";
+"未知" = "unknown";
+
+"其它" = "other";
+"待付款" = "Pending payment";
+"待发货" = "to be delivered";
+"运输中" = "in transit";
+"派送中" = "Dispatching";
+"已完成" = "completed";
+"待评价" = "comment";
+"已取消" = "Cancelled";
+
+"客服回复" = "Customer service reply";

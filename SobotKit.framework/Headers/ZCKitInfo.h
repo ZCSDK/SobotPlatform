@@ -235,6 +235,12 @@
 ////////////////////////////////////////////////////////////////
 
 /**
+ *
+ *   商品卡片信息是否自动发送（转人工成功时，自动发送商品卡片信息）
+ *   默认不发送
+ **/
+@property (nonatomic,assign) BOOL isSendInfoCard;
+/**
  *  产品信息
  */
 @property(nonatomic,strong) ZCProductInfo *productInfo;
@@ -758,12 +764,6 @@
 
 //**********************     帮助中心    end   ***************/
 
-/**
- *
- *   商品卡片信息是否自动发送（转人工成功时，自动发送商品卡片信息）
- *   默认不发送
- **/
-@property (nonatomic,assign) BOOL isSendInfoCard;
 
 // 2.8.0
 /**
