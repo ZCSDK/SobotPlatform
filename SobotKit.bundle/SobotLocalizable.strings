@@ -102,7 +102,6 @@
 
 "图片大小需小于3M!" = "Image size can not exceed 3M!";
 
-"请在iPhone的“设置-隐私-麦克风”选项中，允许%@访问你的麦克风" = "Please allow %@ to access your microphone from device menu Settings";
 
 "请在iPhone的“设置-隐私-麦克风”选项中，允许访问你的麦克风" = "Please allow iPhone to access your microphone from device menu Settings";
 
