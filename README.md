@@ -1,3 +1,12 @@
+## SDK 2.8.4.3 版本更新说明
+1、【优化】新增默认语言  
+
+```   
+   [ZCLibClient getZCLibClient].libInitInfo.default_language = @"zh-Hant_lproj";  
+```  
+2、【优化】设置状态栏颜色为默认颜色
+
+
 ## SDK 2.8.4 版本更新说明
   
 1、【新增】 添加留言评价主动提醒开关   
