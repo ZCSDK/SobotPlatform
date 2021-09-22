@@ -285,6 +285,12 @@
  *   默认不发送
  **/
 @property (nonatomic,assign) BOOL isSendInfoCard;
+
+/*
+   是否每次都自动发送商品信息 默认一次  需要先开启 isSendInfoCard = yes
+ */
+@property (nonatomic,assign) BOOL isEveryTimeSendCard;
+
 /**
  *  产品信息
  */
@@ -299,7 +305,8 @@
 /// 人工后，是否主动发送一条信息
 @property(nonatomic,assign) BOOL autoSendOrderMessage;
 
-
+// 是否每次都发送 订单信息，默认值发送一次， 开启后每次都发送 ，改参数需要先设置 autoSendOrderMessage = yes
+@property(nonatomic,assign) BOOL isEveryTimeAutoSend;
 
 ////////////////////////////////////////////////////////////////
 // 自定义字体，（可选）
