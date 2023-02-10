@@ -513,6 +513,11 @@
 @property (nonatomic,strong) UIColor *topViewTextColor;
 
 /**
+ *   "留言消息" 文字颜色
+ */
+@property (nonatomic,strong) UIColor *leaveMsgTextColor;
+
+/**
  *  左边气泡文字颜色
  */
 @property (nonatomic,strong) UIColor *leftChatTextColor;
@@ -825,4 +830,6 @@
  */
 //@property (nonatomic,assign) CGFloat richImgWidth;
 
+// 系统相册 不使用满屏 默认满屏NO；
+@property (nonatomic,assign)BOOL imagepickerStyleUnFull;
 @end
