@@ -14,7 +14,7 @@ s.author           = { 'zhangxy' => 'app_dev@sobot.com' }
 s.source           = { :git => "https://github.com/ZCSDK/SobotPlatform.git", :tag => s.version.to_s }
 # s.social_media_url = 'https://twitter.com/NAME'
 
-s.platform     = :ios, '8.0'
+s.platform     = :ios, '9.0'
 #s.ios.deployment_target = ‘6.1’
 # s.osx.deployment_target = '10.7'
 s.requires_arc = true
